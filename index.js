@@ -46,12 +46,6 @@ function wagesEarnedOnDate(date){
   return hoursWorkedOnDate.call(this,date)*this.payPerHour;
 }
 //
-// function allWagesFor(employee){
-//   const timeInEvents = employee.timeInEvents;
-//   const  allWagesFor= timeInEvents.map(timeEvent=>wagesEarnedOnDate(employee,timeEvent.date)).reduce((accu,wage)=>accu +=wage);
-//   return allWagesFor;
-// }
-//
 // function findEmployeeByFirstName(employees, firstName){
 //   return employees.find(employee=>employee.firstName === firstName);
 // }
@@ -68,15 +62,22 @@ function wagesEarnedOnDate(date){
 //  As a result, the lessons for this function will pass *and* it will be available
 //  for you to use if you need it!
 //  */
+
 //
-// let allWagesFor = function () {
-//     let eligibleDates = this.timeInEvents.map(function (e) {
-//         return e.date
-//     })
-//
-//     let payable = eligibleDates.reduce(function (memo, d) {
-//         return memo + wagesEarnedOnDate.call(this, d)
-//     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
-//
-//     return payable
+// function allWagesFor(employee){
+//   const timeInEvents = employee.timeInEvents;
+//   const  allWagesFor= timeInEvents.map(timeEvent=>wagesEarnedOnDate(employee,timeEvent.date)).reduce((accu,wage)=>accu +=wage);
+//   return allWagesFor;
 // }
+
+let allWagesFor = function () {
+    let eligibleDates = this.timeInEvents.map(function (e) {
+        return e.date
+    })
+
+    let payable = eligibleDates.reduce(function (memo, d) {
+        return memo + wagesEarnedOnDate.call(this, d)
+    }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
+
+    return payable
+}

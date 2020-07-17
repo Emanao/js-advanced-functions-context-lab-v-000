@@ -79,6 +79,6 @@ let allWagesFor = function () {
 // }
 
 
-function findEmployeeByFirstName(employees, firstName){
-  return employees.find(employee=>employee.firstName === firstName);
+function findEmployeeByFirstName(firstName){
+  return this.find(employee=>employee.firstName === firstName);
 }

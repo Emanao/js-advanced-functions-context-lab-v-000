@@ -36,12 +36,12 @@ function createTimeOutEvent(dateStamp){
 
 }
 
-// function hoursWorkedOnDate(employee, date){
-//   const timeIn = employee.timeInEvents.find(elem=>elem.date ===date).hour;
-//   const timeOut = employee.timeOutEvents.find(elem=>elem.date ===date).hour;
-//   return (timeOut-timeIn)/100;
-// }
-//
+function hoursWorkedOnDate(date){
+  const timeIn = this.timeInEvents.find(timeInEvent=>timeInEvent.date ===date).hour;
+  const timeOut = this.timeOutEvents.find(timeOutEvent=>timeOutEvent.date ===date).hour;
+  return (timeOut-timeIn)/100;
+}
+
 // function wagesEarnedOnDate(employee, date){
 //   return hoursWorkedOnDate(employee,date)*employee.payPerHour;
 // }

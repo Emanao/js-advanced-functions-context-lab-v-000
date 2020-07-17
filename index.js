@@ -13,29 +13,29 @@ function createEmployeeRecords(employees){
   return employees.map((employee)=>createEmployeeRecord(employee));
 }
 
-// function createTimeInEvent(employee, dateStamp){
-//   const [date, time] = dateStamp.split(" ");
-//
-//   employee.timeInEvents.push({
-//     type:"TimeIn",
-//     date: date,
-//     hour: parseInt(time)
-//   });
-//   return employee;
-// }
+function createTimeInEvent(dateStamp){
+  const [date, time] = dateStamp.split(" ");
 
-// function createTimeOutEvent(employee, dateStamp){
-//   const [date, time] = dateStamp.split(" ");
-//
-//   employee.timeOutEvents.push({
-//     type:"TimeOut",
-//     date: date,
-//     hour: parseInt(time)
-//   });
-//   return employee;
-//
-// }
-//
+  this.timeInEvents.push({
+    type:"TimeIn",
+    date: date,
+    hour: parseInt(time)
+  });
+  return this;
+}
+
+function createTimeOutEvent(dateStamp){
+  const [date, time] = dateStamp.split(" ");
+
+  this.timeOutEvents.push({
+    type:"TimeOut",
+    date: date,
+    hour: parseInt(time)
+  });
+  return this;
+
+}
+
 // function hoursWorkedOnDate(employee, date){
 //   const timeIn = employee.timeInEvents.find(elem=>elem.date ===date).hour;
 //   const timeOut = employee.timeOutEvents.find(elem=>elem.date ===date).hour;

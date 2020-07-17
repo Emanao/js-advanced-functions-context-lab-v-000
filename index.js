@@ -75,8 +75,7 @@ let allWagesFor = function () {
 }
 
 function calculatePayroll(employees){
-  console.log("calculatePayroll: "+employees)
-  return this.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
+  return employees.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
 }
 
 

@@ -79,7 +79,7 @@ function calculatePayroll(){
 }
 
 
-function findEmployeeByFirstName(firstName){
-  console.log("this in findEmployeeByFirstName: " + this)
+function findEmployeeByFirstName(employees, firstName){
+  console.log("employees in findEmployeeByFirstName: " + employees)
   return this.find(employee=>employee.firstName === firstName);
 }

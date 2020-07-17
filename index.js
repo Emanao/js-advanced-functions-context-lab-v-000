@@ -45,15 +45,7 @@ function hoursWorkedOnDate(date){
 function wagesEarnedOnDate(date){
   return hoursWorkedOnDate.call(this,date)*this.payPerHour;
 }
-//
-// function findEmployeeByFirstName(employees, firstName){
-//   return employees.find(employee=>employee.firstName === firstName);
-// }
-//
-// function calculatePayroll(employees){
-//   return employees.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
-// }
-//
+
 // /*
 //  We're giving you this function. Take a look at it, you might see some usage
 //  that's new and different. That's because we're avoiding a well-known, but
@@ -80,4 +72,13 @@ let allWagesFor = function () {
     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
     return payable
+}
+
+// function calculatePayroll(employees){
+//   return employees.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
+// }
+
+
+function findEmployeeByFirstName(employees, firstName){
+  return employees.find(employee=>employee.firstName === firstName);
 }

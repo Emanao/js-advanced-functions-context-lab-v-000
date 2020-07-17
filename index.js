@@ -74,9 +74,9 @@ let allWagesFor = function () {
     return payable
 }
 
-// function calculatePayroll(employees){
-//   return employees.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
-// }
+function calculatePayroll(){
+  return this.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
+}
 
 
 function findEmployeeByFirstName(firstName){

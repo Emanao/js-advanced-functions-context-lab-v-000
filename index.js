@@ -13,9 +13,7 @@ function createEmployeeRecords(employees){
   return employees.map((employee)=>createEmployeeRecord(employee));
 }
 
-function calculatePayroll(employees){
-  return employees.map((employee) => allWagesFor(employee)).reduce((accu,wage)=>accu += wage);
-}
+
 
 function findEmployeeByFirstName(employees, firstName){
   return employees.find(employee=>employee.firstName === firstName);
@@ -81,4 +79,8 @@ let allWagesFor = function () {
     }.bind(this), 0) // <== Hm, why did we need to add bind() there? We'll discuss soon!
 
     return payable
+}
+
+function calculatePayroll(employees){
+  return employees.map((employee) => allWagesFor.call(employee)).reduce((accu,wage)=>accu += wage);
 }

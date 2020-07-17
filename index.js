@@ -42,9 +42,9 @@ function hoursWorkedOnDate(date){
   return (timeOut-timeIn)/100;
 }
 
-// function wagesEarnedOnDate(employee, date){
-//   return hoursWorkedOnDate(employee,date)*employee.payPerHour;
-// }
+function wagesEarnedOnDate(date){
+  return hoursWorkedOnDate.call(this,date)*this.payPerHour;
+}
 //
 // function allWagesFor(employee){
 //   const timeInEvents = employee.timeInEvents;
